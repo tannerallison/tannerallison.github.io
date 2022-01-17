@@ -11,7 +11,7 @@ My solution utilizes a lot of recursive common table expressions (CTEs). CTEs ar
 
 Since this puzzle is all about digits 1 through 9, I need to make something that will get me those values to work with.
 
-```SQL
+```sql
 ;WITH Cnt AS 
 (
    SELECT 1 AS [val]
@@ -29,7 +29,7 @@ This is an easy way to get the digits we need without having to list them all ou
 
 Next, I want to get a set of all the possible locations in the grid with values ranging from 1 to 81. I could do another CTE like the one I just did, but I already have values 1 to 9, I can utilize my Cnt table to create my location table.
 
-```SQL
+```sql
 locations
   AS (
           SELECT    [row].[val] AS [row]
@@ -41,6 +41,7 @@ locations
 ```
 
 Locations Table Contents
+
 | row | col | loc |
 | --- | --- | --- |
 | 1   | 1   | 1   |
@@ -55,7 +56,7 @@ In the game of Sudoku, each cell contains a digit that is unique within the row,
 
 This will allow us to cross-reference any locations to see if a particular value already exists. For instance, if I'm looking at the value in location 19, I'll need to look at all the locations that are part of the groupings 103, 201, and 301 to see if the value I want to put in that location is already in any of the other locations in those groups.
 
-```SQL
+```sql
 groups
   AS (
       SELECT   -- Groups of Rows
@@ -82,7 +83,6 @@ The first two select clauses are retrieving the row and column groupings respect
 | 101      | 1  -- Rows    |
 | 101      | 2             |
 | ...      |               |
-| 101      | 8             |
 | 101      | 9             |
 | 102      | 10            |
 | ..       |               |
@@ -101,10 +101,6 @@ The first two select clauses are retrieving the row and column groupings respect
 | 201      | 73            |
 | 202      | 2             |
 | ...      |               |
-| 202      | 74            |
-| 203      | 3             |
-| ...      |               |
-| 209      | 81            |
 | 301      | 1  -- Squares |
 | 301      | 2             |
 | 301      | 3             |
@@ -116,7 +112,3 @@ The first two select clauses are retrieving the row and column groupings respect
 | 301      | 21            |
 | 302      | 4             |
 | ...      |               |
-| 302      | 24            |
-| 303      | 7             |
-| ...      |               |
-| 309      | 81            |
