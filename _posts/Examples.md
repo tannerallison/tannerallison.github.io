@@ -72,4 +72,3 @@ print(1+1)
 ## Footnotes
 
 [^1]: This is the footnote.
-
