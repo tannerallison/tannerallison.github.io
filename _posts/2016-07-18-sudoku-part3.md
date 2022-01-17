@@ -1,6 +1,9 @@
-# Solving Sudoku with a Single SQL Query, Part 3
+---
+layout: post
+title: Solving Sudoku with a Single SQL Query, Part 3
+---
 
-> See the other parts of this discussion [here](2016-07-06-sudoku.md) and [here](2016-07-12-sudoku-part2.md).
+> See the other parts of this discussion [here]({% post_url 2016-07-06-sudoku %}) and [here]({% post_url 2016-07-12-sudoku-part2 %}).
 
 Okay, now that we have the general framework we can start writing the pieces that deal with the values that were given to us in the puzzle. The first thing I'm going to do is create a table that contains each possible value for each cell based on the values that are already in the solution.
 
