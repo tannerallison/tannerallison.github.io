@@ -1,6 +1,7 @@
 ---
 layout: post
 title: Solving Sudoku with a Single SQL Query, Part 2
+categories: SQL, Programming
 ---
 
 In this post, I'll be diving deep into the code that was presented in [part 1]({% post_url 2016-07-06-sudoku %}).
