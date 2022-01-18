@@ -1,7 +1,7 @@
 ---
 layout: post
 title: A Task Delayed
-published: false
+category: screeps
 ---
 
 I can sometimes be slow on the uptake for some things, especially when it comes to programming. I recently had a moment of clarity in designing my Screeps AI that may seem like a "well duh" kind of thing to most who play the game, but I just didn't grasp the concept, even though I've been playing off and on for years, and that is the idea of setting up actions for the screeps to perform 'aynchronous' to execution of the action itself.
